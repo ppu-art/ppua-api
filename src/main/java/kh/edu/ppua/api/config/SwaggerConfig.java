@@ -42,7 +42,7 @@ public class SwaggerConfig {
         return GroupedOpenApi.builder()
                 .group("dev-apis")
                 .pathsToMatch("/api/**") // Scan all paths starting with /api
-                .packagesToScan("kh.edu.ppua.api.controller") // Scan specific package
+               // .packagesToScan("kh.edu.ppua.api.controller") // Scan specific package
                 .build();
     }
 

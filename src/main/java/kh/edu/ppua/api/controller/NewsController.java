@@ -1,5 +1,6 @@
-package kh.edu.ppua.api.comtroller;
+package kh.edu.ppua.api.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import kh.edu.ppua.api.model.NewsEntity;
 import kh.edu.ppua.api.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/news")
+@Tag(name = "News Controller", description = "APIs for News")
 public class NewsController {
 
     @Autowired

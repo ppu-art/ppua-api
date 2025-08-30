@@ -1,4 +1,4 @@
-package kh.edu.ppua.api.comtroller;
+package kh.edu.ppua.api.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

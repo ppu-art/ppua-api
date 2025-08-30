@@ -1,5 +1,8 @@
-package kh.edu.ppua.api.comtroller;
+package kh.edu.ppua.api.controller;
 
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import kh.edu.ppua.api.model.FacultyEntity;
 import kh.edu.ppua.api.service.FacultyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/faculty")
+@Tag(name = "Faculty Controller", description = "APIs for Faculty")
 public class FacultyController {
 
     @Autowired
@@ -17,6 +21,11 @@ public class FacultyController {
 
     // Get all faculties
     @GetMapping
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Search completed"),
+            @ApiResponse(responseCode = "400", description = "Missing or invalid search parameters"),
+            @ApiResponse(responseCode = "500", description = "Search service unavailable")
+    })
     public List<FacultyEntity> getAllFaculties() {
         return service.getAllFaculties();
     }
